@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="empleados">
+          <Key>
+            <PropertyRef Name="numEmp" />
+          </Key>
+          <Property Name="numEmp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+          <Property Name="estatus" Type="varchar" MaxLength="50" />
+          <Property Name="fechaCreacion" Type="date" />
+        </EntityType>
+        <Function Name="actualizarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="numEmp" Type="int" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="estatus" Type="varchar" Mode="In" />
+          <Parameter Name="fechaCrea" Type="date" Mode="In" />
+        </Function>
+        <Function Name="agregarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="estatus" Type="varchar" Mode="In" />
+          <Parameter Name="fechCrea" Type="date" Mode="In" />
+        </Function>
+        <Function Name="eliminarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="numEmp" Type="int" Mode="In" />
+        </Function>
+        <Function Name="leerEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="numEmp" Type="int" Mode="In" />
+        </Function>
+        <Function Name="verEmpleados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="RHModelStoreContainer">
+          <EntitySet Name="empleados" EntityType="Self.empleados" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="empleados">
+          <Key>
+            <PropertyRef Name="numEmp" />
+          </Key>
+          <Property Name="numEmp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="RHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="empleados" EntityType="Self.empleados" />
+          <FunctionImport Name="actualizarEmpleado">
+            <Parameter Name="numEmp" Mode="In" Type="Int32" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="estatus" Mode="In" Type="String" />
+            <Parameter Name="fechaCrea" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="agregarEmpleado">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="estatus" Mode="In" Type="String" />
+            <Parameter Name="fechCrea" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="eliminarEmpleado">
+            <Parameter Name="numEmp" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="leerEmpleado" ReturnType="Collection(RHModel.leerEmpleado_Result)">
+            <Parameter Name="numEmp" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="verEmpleados" ReturnType="Collection(RHModel.verEmpleados_Result)" />
+        </EntityContainer>
+        <ComplexType Name="leerEmpleado_Result">
+          <Property Type="Int32" Name="numEmp" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="estatus" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="fechaCreacion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="verEmpleados_Result">
+          <Property Type="Int32" Name="numEmp" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="estatus" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="fechaCreacion" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RHModelStoreContainer" CdmEntityContainer="RHEntities">
+          <EntitySetMapping Name="empleados">
+            <EntityTypeMapping TypeName="RHModel.empleados">
+              <MappingFragment StoreEntitySet="empleados">
+                <ScalarProperty Name="numEmp" ColumnName="numEmp" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="actualizarEmpleado" FunctionName="RHModel.Store.actualizarEmpleado" />
+          <FunctionImportMapping FunctionImportName="agregarEmpleado" FunctionName="RHModel.Store.agregarEmpleado" />
+          <FunctionImportMapping FunctionImportName="eliminarEmpleado" FunctionName="RHModel.Store.eliminarEmpleado" />
+          <FunctionImportMapping FunctionImportName="leerEmpleado" FunctionName="RHModel.Store.leerEmpleado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RHModel.leerEmpleado_Result">
+                <ScalarProperty Name="numEmp" ColumnName="numEmp" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="verEmpleados" FunctionName="RHModel.Store.verEmpleados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RHModel.verEmpleados_Result">
+                <ScalarProperty Name="numEmp" ColumnName="numEmp" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,12 @@
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\bin\Debug\Entidades.dll.config
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\bin\Debug\Entidades.dll
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\bin\Debug\Entidades.pdb
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\bin\Debug\EntityFramework.dll
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\bin\Debug\EntityFramework.xml
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\obj\Debug\Entidades.dll
+D:\Proyectos C#\ExamenBranchBitFinal\Entidades\obj\Debug\Entidades.pdb

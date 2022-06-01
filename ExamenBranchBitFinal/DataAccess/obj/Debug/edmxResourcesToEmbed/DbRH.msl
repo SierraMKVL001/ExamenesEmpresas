@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RHModelStoreContainer" CdmEntityContainer="RHEntities">
+    <EntitySetMapping Name="empleados">
+      <EntityTypeMapping TypeName="RHModel.empleados">
+        <MappingFragment StoreEntitySet="empleados">
+          <ScalarProperty Name="numEmp" ColumnName="numEmp" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="actualizarEmpleado" FunctionName="RHModel.Store.actualizarEmpleado" />
+    <FunctionImportMapping FunctionImportName="agregarEmpleado" FunctionName="RHModel.Store.agregarEmpleado" />
+    <FunctionImportMapping FunctionImportName="eliminarEmpleado" FunctionName="RHModel.Store.eliminarEmpleado" />
+    <FunctionImportMapping FunctionImportName="leerEmpleado" FunctionName="RHModel.Store.leerEmpleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RHModel.leerEmpleado_Result">
+          <ScalarProperty Name="numEmp" ColumnName="numEmp" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="verEmpleados" FunctionName="RHModel.Store.verEmpleados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RHModel.verEmpleados_Result">
+          <ScalarProperty Name="numEmp" ColumnName="numEmp" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,15 @@
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\bin\Debug\DataAccess.dll.config
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\bin\Debug\DataAccess.dll
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\bin\Debug\DataAccess.pdb
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\bin\Debug\Entidades.dll
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\bin\Debug\EntityFramework.dll
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\bin\Debug\Entidades.pdb
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\bin\Debug\Entidades.dll.config
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\bin\Debug\EntityFramework.xml
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\obj\Debug\DataAccess.dll
+D:\Proyectos C#\ExamenBranchBitFinal\DataAccess\obj\Debug\DataAccess.pdb

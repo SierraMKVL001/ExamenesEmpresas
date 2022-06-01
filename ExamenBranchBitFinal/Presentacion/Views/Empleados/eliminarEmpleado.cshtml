@@ -1,0 +1,44 @@
+﻿@model Entidades.empleados
+<h2>Eliminar Empleado</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Numero de Empleado
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.numEmp)
+        </dd>
+        <dt>
+            Nombre
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.nombre)
+        </dd>
+        <dt>
+            Correo
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.correo)
+        </dd>
+        <dt>
+            Estatus
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.estatus)
+        </dd>
+        <dt>
+            Fecha de Creacion
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.fechaCreacion)
+        </dd>
+    </dl>
+    @*@using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" />
+            </div>
+        }*@
+</div>

@@ -1,0 +1,64 @@
+﻿@model Entidades.empleados
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Estas seguro de querer eliminar este Empleado?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Numero de Empleado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numEmp)
+        </dd>
+
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            Correo Electronico
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+
+        <dt>
+            Estatus
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estatus)
+        </dd>
+
+        <dt>
+            Fecha de Creacion
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaCreacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> 
+            <br />
+            @Html.ActionLink("Regresar a la Lista", "Index")
+        </div>
+    }
+</div>

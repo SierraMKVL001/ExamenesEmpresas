@@ -1,0 +1,37 @@
+﻿@model Entidades.empleados
+
+<h2>Datos del Empleado</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Numero de Empleado
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.numEmp)
+        </dd>
+        <dt>
+            Nombre
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.nombre)
+        </dd>
+        <dt>
+            Correo
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.correo)
+        </dd>
+        <dt>
+            Estatus
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.estatus)
+        </dd>
+        <dt>
+            Fecha de Creacion
+        </dt>
+        <dd>
+            @Html.DisplayFor(m => m.fechaCreacion)
+        </dd>
+    </dl>
+</div>

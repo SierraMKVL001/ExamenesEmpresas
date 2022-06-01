@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="empleados">
+    <Key>
+      <PropertyRef Name="numEmp" />
+    </Key>
+    <Property Name="numEmp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaCreacion" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="RHEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="empleados" EntityType="Self.empleados" />
+    <FunctionImport Name="actualizarEmpleado">
+      <Parameter Name="numEmp" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="estatus" Mode="In" Type="String" />
+      <Parameter Name="fechaCrea" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="agregarEmpleado">
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="estatus" Mode="In" Type="String" />
+      <Parameter Name="fechCrea" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="eliminarEmpleado">
+      <Parameter Name="numEmp" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="leerEmpleado" ReturnType="Collection(RHModel.leerEmpleado_Result)">
+      <Parameter Name="numEmp" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="verEmpleados" ReturnType="Collection(RHModel.verEmpleados_Result)" />
+  </EntityContainer>
+  <ComplexType Name="leerEmpleado_Result">
+    <Property Type="Int32" Name="numEmp" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="correo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="estatus" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="fechaCreacion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="verEmpleados_Result">
+    <Property Type="Int32" Name="numEmp" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="correo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="estatus" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="fechaCreacion" Nullable="true" />
+  </ComplexType>
+</Schema>
